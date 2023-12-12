@@ -13,5 +13,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, HOST, () => {
-  console.log(`Running with github actions on http://${HOST}:${PORT}`);
+  console.log(`Running with github actions and pushing to docker hub on http://${HOST}:${PORT}`);
 });
