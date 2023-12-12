@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: github-actions-deployment
+  namespace: v-namespace
+  labels:
+    app: express-docker-github-actions
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: express-docker-github-actions
+  template:
+    metadata:
+      labels:
+        app: express-docker-github-actions
+    spec:
+      containers:
+      - name: express-docker-github-actions-container
+        image: "vaishnaviwohlig/express-docker:latest"
+        imagePullSecrets:
+          - name: github-container-registry
+          env:
+          - name: token1
+            value: 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
+        
